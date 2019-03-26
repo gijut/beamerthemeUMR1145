@@ -12,9 +12,22 @@
 \title{Some Presentation Title That's Long Enough To Need Two Lines}
 \date[\today]{Converence XYZ, \today}
 \author[Freeman]{Dr. Gordon Freeman}
-%\unilogo{\includegraphics[height=\LUHLogoHeight]{luh_logo_rgb}}
-%\logo{\includegraphics[height=\LUHLogoHeight]{department_logo}}
-%\titleimage{\includegraphics[width=.7\paperwidth]{luh_title_image}}
+\setbeamertemplate{logonortheastp1}{NE\includegraphics[height=\LUHLogoHeight]{hautp1.png}}
+\setbeamertemplate{logonorthwestp1}{NW\includegraphics[height=\LUHLogoHeight]{traitgauche.png}}
+\setbeamertemplate{logosoutheastp1}{SE\raggedleft%
+\includegraphics[height=\LUHLogoHeight]{logoAPT.png}%
+\includegraphics[height=\LUHLogoHeight]{logoINRA.png}
+\includegraphics[height=\LUHLogoHeight]{traitbas.png}%
+}
+\setbeamertemplate{logosouthwestp1}{SW\includegraphics[height=\LUHLogoHeight]{coinbasgauche.jpg}}
+% \titleimage{\includegraphics[width=.7\paperwidth]{luh_title_image}}
+\setbeamertemplate{logonortheast}{\includegraphics[height=\LUHLogoHeight]{haut.png}}
+\setbeamertemplate{logosouthwest}{\raggedleft%
+\includegraphics[height=\LUHLogoHeight]{logoAPT.png}%
+\includegraphics[height=\LUHLogoHeight]{logoINRA.png}\\
+\includegraphics[height=\LUHLogoHeight]{coinbasgauche.jpg}%
+}
+\setbeamertemplate{logosoutheast}{\includegraphics[height=\LUHLogoHeight]{traitbas.png}}
 
 
 
@@ -23,6 +36,7 @@
 \begin{frame}
 \titlepage
 \end{frame}
+
 
 \begin{frame}{Some frame title}
 Some text.
