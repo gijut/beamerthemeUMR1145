@@ -45,11 +45,11 @@
   \begin{tikzpicture}
     \useasboundingbox (0,\paperheight-\LUHLogoHeight-1.5*\LUHBorder) rectangle(\paperwidth,\paperheight);
     
-    \def\ispageone{}
+    \def\ispageone{}%
     \ifnum\thepage<2\relax%
-      \LUHLogoHeight=1.3\LUHLogoHeight
-      \def\ispageone{p1}
-    \fi
+      \LUHLogoHeight=1.3\LUHLogoHeight%
+      \def\ispageone{p1}%
+    \fi%
     \node[anchor=south east,inner sep=0pt] at (\the\paperwidth-\LUHBorder,\LUHBorder)
       {\usebeamertemplate***{logosoutheast\ispageone}};
     \node[anchor=south west,inner sep=0pt] at (\LUHBorder,\LUHBorder)
