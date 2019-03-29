@@ -11,23 +11,48 @@
 
 \title{Some Presentation Title That's Long Enough To Need Two Lines}
 \date[\today]{Converence XYZ, \today}
-\author[Freeman]{Dr. Gordon Freeman}
-\setbeamertemplate{logonortheastp1}{NE\includegraphics[height=\LUHLogoHeight]{hautp1.png}}
-\setbeamertemplate{logonorthwestp1}{NW\includegraphics[height=\LUHLogoHeight]{traitgauche.png}}
-\setbeamertemplate{logosoutheastp1}{SE\raggedleft%
-\includegraphics[height=\LUHLogoHeight]{logoAPT.png}%
-\includegraphics[height=\LUHLogoHeight]{logoINRA.png}
-\includegraphics[height=\LUHLogoHeight]{traitbas.png}%
+\author[Insert author]{Author DEF}
+
+\setbeamertemplate{logonortheastp1}{\begin{picture}(0,0)(0,0)
+\put(-0,-30){\llap{\includegraphics[width=.95\textwidth]{hautp1.png}}}\end{picture}}
+\setbeamertemplate{logonorthwestp1}{}
+\setbeamertemplate{logosoutheastp1}{\begin{picture}(0,0)(20,2)
+\put(0,20){\llap{
+\includegraphics[height=1cm]{logoAPT.png}%
+\includegraphics[height=1cm]{logoINRA.png}}}~
+\end{picture}
 }
-\setbeamertemplate{logosouthwestp1}{SW\includegraphics[height=\LUHLogoHeight]{coinbasgauche.jpg}}
+\setbeamertemplate{logosouthwestp1}{\begin{picture}(0,0)(-5,-1)
+\put(50,0){\llap{\includegraphics[height=19mm]{coinbasgauche.jpg}}}
+\put(12,53){\includegraphics[height=.93\textheight]{traitgauche.png}}
+\put(45,6){
+\includegraphics[width=.88\textwidth]{traitbas.png}}
+\put(20,32){\color{red}Ingénierie Procédés Aliments}
+\put(20,22){\color{red}\textit{(Food \& Process Engineering)}}
+\end{picture}
+}
 % \titleimage{\includegraphics[width=.7\paperwidth]{luh_title_image}}
-\setbeamertemplate{logonortheast}{\includegraphics[height=\LUHLogoHeight]{haut.png}}
-\setbeamertemplate{logosouthwest}{\raggedleft%
-\includegraphics[height=\LUHLogoHeight]{logoAPT.png}%
-\includegraphics[height=\LUHLogoHeight]{logoINRA.png}\\
-\includegraphics[height=\LUHLogoHeight]{coinbasgauche.jpg}%
+\setbeamertemplate{logonortheast}{\begin{picture}(0,0)(0,0)
+\put(0,-20){\llap{\includegraphics[width=.94\textwidth]{haut.png}}}
+\end{picture}}
+\setbeamertemplate{logosouthwest}{\begin{picture}(0,0)(-5,-1)
+\put(50,0){\llap{\includegraphics[height=19mm]{coinbasgauche.jpg}}}
+\put(45,6){
+\includegraphics[width=.88\textwidth]{traitbas.png}}
+\put(-5,53){\rotatebox{90}{\rlap{
+\includegraphics[height=5mm]{logoAPT.png}%
+\includegraphics[height=5mm]{logoINRA.png}}}}
+\put(12,53){\includegraphics[height=.93\textheight]{traitgauche.png}}
+\end{picture}
 }
-\setbeamertemplate{logosoutheast}{\includegraphics[height=\LUHLogoHeight]{traitbas.png}}
+% \setbeamertemplate{logosoutheast}{\includegraphics[height=\LUHLogoHeight]{traitbas.png}}
+
+\AtBeginSection[]% merci http://jeromyanglim.tumblr.com/post/33559584570/how-to-show-active-section-in-table-of-contents-in
+{
+   \begin{frame}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
 
 
 
@@ -37,6 +62,8 @@
 \titlepage
 \end{frame}
 
+
+\section{premiere section}
 
 \begin{frame}{Some frame title}
 Some text.
@@ -51,6 +78,7 @@ Some text.
     \item Example
 \end{itemize}
 
+
 \begin{enumerate}
   \item Hello,
     \begin{enumerate}
@@ -64,11 +92,94 @@ Some text.
 
 \end{frame}
 
+\section{seconde section}
+
 
 \begin{frame}{Some other frame}
 \framesubtitle{With a subtitle}
 \begin{block}{Block Header}
 And some content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
+And some more content.
+
+And even more content.
+
 
 And some more content.
 

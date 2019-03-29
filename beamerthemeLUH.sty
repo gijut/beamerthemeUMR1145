@@ -11,9 +11,9 @@
 \newlength{\LUHFooterHeightTitle}
 \newlength{\LUHLogoHeight}
 
-\LUHBorder=0.3cm
-\LUHLogoHeight=0.65cm % Will be larger on the title page
-\LUHFooterHeight=1.8\LUHBorder
+\LUHBorder=0.0cm
+\LUHLogoHeight=0.0cm % Will be larger on the title page
+\LUHFooterHeight=.8\LUHBorder
 \LUHFooterHeightTitle=1.4\LUHFooterHeight
 
 %\logo{\tikz \node}
@@ -36,10 +36,11 @@
 }
 
 
+
 \defbeamertemplate*{title image}{LUH}[1][]{%
   \begin{tikzpicture}
     \node[
-      fill=LUHblue, text=white,
+      text=LUHblue,
       text centered, text width=0.5\paperwidth,
       minimum height=0.5\paperheight,
       font=\scriptsize
@@ -55,8 +56,8 @@
 \defbeamertemplate*{university logo}{LUH}[1][]{%
   \begin{tikzpicture}
     \node[
-      fill=LUHblue, text=white,
-      text badly centered, text width=4\LUHLogoHeight,
+      text=LUHblue,
+      text badly centered, text width=.4\LUHLogoHeight,
       minimum height=\LUHLogoHeight,
       inner sep=2pt
     ] {
@@ -70,7 +71,7 @@
 \defbeamertemplate*{logo}{LUH}[1][]{%
   \begin{tikzpicture}
     \node[
-      fill=LUHblue, text=white,
+      text=LUHblue,
       text badly centered, text width=3\LUHLogoHeight,
       minimum height=\LUHLogoHeight,
       inner sep=2pt

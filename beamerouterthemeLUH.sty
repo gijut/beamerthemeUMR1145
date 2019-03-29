@@ -7,43 +7,40 @@
   \begin{tikzpicture}[inner sep=0]
     \ifnum\thepage<2\relax%
       \LUHFooterHeight=\LUHFooterHeightTitle
-      \def\ScaleAuthor{1.1}
+      \def\ScaleAuthor{1.}
     \else
       \def\ScaleAuthor{1}
     \fi
     \useasboundingbox (0,0) rectangle (\the\paperwidth,\LUHFooterHeight);
     % Gray rectangle
-    \usebeamercolor{footline}
-    \fill[bg] (-.1pt,-.1pt) rectangle(\the\paperwidth+.1pt,\LUHFooterHeight+.1pt);
+    %\usebeamercolor{footline}
+    %\fill[bg] (-.1pt,-.1pt) rectangle(\the\paperwidth+.1pt,\LUHFooterHeight+.1pt);
     \ifnum\thepage>1\relax%
       % Green bar
-      \usebeamercolor{palette quaternary}
-      \fill[bg] (\the\paperwidth-\LUHBorder,\LUHFooterHeight) rectangle ++(-2cm,-0.2*\LUHFooterHeight);
+      %\usebeamercolor{palette quaternary}
+      %\fill[bg] (\the\paperwidth-\LUHBorder,\LUHFooterHeight) rectangle ++(-2cm,-0.2*\LUHFooterHeight);
       % Page/Frame number
-      \node[left, text depth=0]
-        at (\the\paperwidth-1.5*\LUHBorder, \LUHFooterHeight/2-0.05*\LUHFooterHeight)
+      \node[right, text depth=0]
+        at (5mm, .95\textheight)
         {\usebeamertemplate***{page number in head/foot}};
     \fi
     % Name, title, date
-    \node[right, text depth=0, text width=\paperwidth-\beamer@leftmargin-\beamer@rightmargin, inner sep=0]
-      at (\beamer@leftmargin, \LUHFooterHeight/2)
+    \node[left, text depth=0, text width=.75\paperwidth, inner sep=0]
+      at (.95\textwidth, 2mm)
       {
-        {\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\scalebox{\ScaleAuthor}{\insertauthor}}%
         \ifnum\thepage>1\relax%
-          {\usebeamercolor{title in head/foot}\usebeamerfont{title in head/foot}\hspace{2em}\insertshorttitle}%
-          {\usebeamercolor{date in head/foot}\usebeamerfont{date in head/foot}\hspace{2em}\insertshortdate}%
-        \else
+        {\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\scalebox{\ScaleAuthor}{\insertauthor}}%
           {\usebeamercolor{date in head/foot}%
           \usebeamerfont{date in head/foot}%
           \hfill\insertdate}%
-        \fi
+          \fi%
       };
   \end{tikzpicture}
 }
 
 \defbeamertemplate*{headline}{LUH}[1][]{%
   \begin{tikzpicture}
-    \useasboundingbox (0,\paperheight-\LUHLogoHeight-1.5*\LUHBorder) rectangle(\paperwidth,\paperheight);
+    \useasboundingbox (0,\paperheight) rectangle(\paperwidth,\paperheight);
     
     \def\ispageone{}%
     \ifnum\thepage<2\relax%
@@ -64,26 +61,23 @@
 
 \defbeamertemplate*{sidebar right}{LUH}[1][]{}
 \defbeamertemplate*{sidebar left}{LUH}[1][]{}
-\defbeamertemplate*{page number in head/foot}{LUH}[1][]{\translate{Page} \insertframenumber}
+\defbeamertemplate*{page number in head/foot}{LUH}[1][]{\insertframenumber}%\translate{Page}
 
 
 
 % Frame title
 \defbeamertemplate*{frametitle}{LUH}[1][]{%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm,dp=0pt]{frametitle} %
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0mm,dp=0pt]{frametitle} %
   \begin{tikzpicture}[inner sep=0,draw]
-  \useasboundingbox (0,0) rectangle(\paperwidth,1cm);
+  \useasboundingbox (0,0) rectangle(\paperwidth,0mm);
 
   \usebeamercolor{frametitle}
   \ifx\insertframesubtitle\@empty
-    \node[right, fg, text depth=0] at (\beamer@leftmargin,0.5)
-      {\usebeamerfont{frametitle}\insertframetitle};
+    \node[right, fg, text depth=0] at (\beamer@rightmargin,0.4)    
+      {\usebeamerfont{framesubtitle}\insertsection{} \usebeamerfont{frametitle}\insertframetitle};
   \else
-    \node[right, fg, text depth=0] at (\beamer@leftmargin,0.7)
-      {\usebeamerfont{frametitle}\insertframetitle};
-    \usebeamercolor{framesubtitle}
-    \node[right, fg, text depth=0] at (\beamer@leftmargin,0.25)
-      {\usebeamerfont{framesubtitle}\insertframesubtitle};
+    \node[right, fg, text depth=0] at (\beamer@leftmargin,0.4)
+      {\usebeamerfont{framesubtitle}\insertsection{} \usebeamerfont{frametitle}\insertframetitle{} \usebeamerfont{framesubtitle}\insertframesubtitle};
   \fi
   \end{tikzpicture}
   \end{beamercolorbox}
