@@ -5,6 +5,14 @@
 \usepackage{helvet}
 \usepackage[english]{babel}
 
+\usepackage[
+backend=biber,
+style=nejm,
+sorting=ynt
+]{biblatex}
+
+\addbibresource{bibliography.bib}
+ 
 \usetheme{LUH}
 
 
@@ -54,7 +62,65 @@
    \end{frame}
 }
 
+% \usepackage[para]{footepackage{parnotes}% marche pas dans beamer.
+\usepackage{parnotes}% pour \parnote https://tex.stackexchange.com/questions/271809/footnotes-in-a-single-paragraph-in-beamer
 
+\DeclareSourcemap{
+    \maps[datatype=bibtex,overwrite=true]{
+        \map[refsection=1]{% with refsection=<n> the map is valid only for the refsection with <n> number
+            \step[fieldsource=title,
+            match=\regexp{The\sMathematics\sof\sDiffusion},
+            replace={MathDiffus}]
+            \step[fieldsource=title,
+            match=\regexp{.*\s.*},
+            replace={}]
+            \step[fieldsource=journal,
+            match=\regexp{Drying\sTechnology},
+            replace={DryTech}]
+            \step[fieldsource=journal,
+            match=\regexp{Journal\sof\sFood\sEngineering},
+            replace={JFoodEng}]
+            \step[fieldsource=journal,
+            match=\regexp{Industrial\s.*Engineering\sChemistry\sResearch},
+            replace={IndEngChemRes}]
+            \step[fieldsource=number,
+            match=\regexp{.*},
+            replace={}] 
+            \step[fieldsource=pages,
+            match=\regexp{.*},
+            replace={}] 
+            \step[fieldsource=volume,
+            match=\regexp{.*},
+            replace={}] 
+            \step[fieldsource=publisher,
+            match=\regexp{.*},
+            replace={}] 
+            \step[fieldsource=doi,
+            match=\regexp{.*},
+            replace={}] 
+            \step[fieldsource=author,
+            match=\regexp{[, ].*},
+            replace={}]
+            \step[fieldsource=year, % https://tex.stackexchange.com/questions/142837/declaresourcemap-in-biblatex
+            match=\regexp{19([3-9][0-9])},
+            replace={'$1}]
+            \step[fieldsource=year, % https://tex.stackexchange.com/questions/142837/declaresourcemap-in-biblatex
+            match=\regexp{20([0-2][0-9])},
+            replace={'$1}]
+        }                                     
+    }
+}
+\global\def\bibliofinale{}
+% \renewcommand{\parnoteintercmd}{\penalty-1000\hskip 1em plus 10em minus 0.2em}
+\makeatletter
+\newcommand{\parcite}[2][]{\parnote{#1\fullcite{#2}}
+    \unless\ifx\bibliofinale\@empty\g@addto@macro\bibliofinale{\parnoteintercmd}\fi
+    % Redefine \@currentlabel to the parnote label, so \label works
+    \g@addto@macro\bibliofinale{\phantomsection\def\@currentlabel{#1}}%
+    \g@addto@macro\bibliofinale{\cite{#2}}%
+}
+\makeatother
+\let\tobefullcite=\fullcite
 
 \begin{document}
 
@@ -62,11 +128,12 @@
 \titlepage
 \end{frame}
 
+\begin{refsection}
+\section{premiere section} 
 
-\section{premiere section}
 
 \begin{frame}{Some frame title}
-Some text.
+Some text\parcite{Romdhana19DryTech} \parcite{Crank80theMathematics} \parcite{Vitrac06identification} \parcite{Romdhana16JFoodEng}
 \begin{itemize}
   \item Hello,
     \begin{itemize}
@@ -98,7 +165,7 @@ Some text.
 \begin{frame}{Some other frame}
 \framesubtitle{With a subtitle}
 \begin{block}{Block Header}
-And some content.
+And some content.\parcite{Romdhana19DryTech}
 
 And some more content.
 
@@ -187,5 +254,10 @@ And even more content.
 \end{block}
 \end{frame}
 
+\end{refsection}
 
+\begin{frame}
+\setbox0=\hbox{\bibliofinale}
+\printbibliography
+\end{frame}
 \end{document}

@@ -1,0 +1,100 @@
+
+@article{
+Abud01Processing,
+Author = {Abud-Archila, M. and Courtois, F. and Bonazzi, C. and Bimbenet, J. J.},
+Title = {Processing quality of rough rice during drying - modelling of head rice yield versus moisture gradients and kernel temperature},
+Journal = {Journal of Food Engineering},
+Volume = {45},
+Number = {3},
+Pages = {161-169},
+Notes = {{
+}n{http://www.sciencedirect.com/science/article/B6T8J-405KDXJ-6/2/c63bab6d2f65b33b1a54ba26552c94fe
+sur http://gia.agroparistech.fr:10000/articles/2000_food_eng_45(3).pdf Bonazzi97 pr�chauffait les grains pour �viter la fissuratoin. p163b, table 2, 13 exp�riences de s�chage.
+}l{unzip -l ~/livres/endnotegoujot.Data/PDF/Abud01Processing-3885093889/Abud01Processing.zip:      1    455714  2010-04-20 17:35   article.pdf
+}},
+Abstract = {The published literature reviews various factors responsible for rice breakage during milling. Artificial drying immediately after harvesting is one of the main causes of kernel fissures in temperate countries like France. These virtually invisible fissures lead to high breakage ratios during milling. The present work attempts to construct a simulation tool capable of predicting head rice yield during drying, so that the design of industrial rice dryers can be improved. Relationships were established between head rice yield and both moisture content gradient and kernel temperature. The influence of the temperature and evaporating capacity of the drying air on head rice yield after processing was studied. Experimental quality data were fitted to a kinetic model. Evaporating capacity was identified as the principal factor responsible for head rice yield reduction: head rice yield is not affected by high drying temperatures if evaporating capacity remains low. The kinetic model developed by the authors describes head rice yield accurately, with an error of 6{}\%.},
+Keywords = {Head rice yield
+Kinetic model
+Moisture gradient},
+Year = {2000} }
+
+@article{
+Vitrac06identification,
+Author = {Vitrac, Olivier and Hayert, Murielle},
+Title = {Identification of Diffusion Transport Properties from Desorption/Sorption Kinetics: An Analysis Based on a New Approximation of Fick Equation during Solid-Liquid Contact},
+Journal = {Industrial {}\& Engineering Chemistry Research},
+Volume = {45},
+Number = {23},
+Pages = {7941-7956},
+Notes = {{
+}n{(j'avais une vielle version non annote et maintenant jetee. sensc avec un isotherme affine, plus solution approchee avec polynome ; la revue 1 de senscnonlin fait reference aux passage juste avant (2) et juste apres (5) de ce papier)
+}l{unzip -l ~/livres/endnotegoujot.Data/PDF/Vitrac06identification-4029835008/Vitrac06identification.zip:      1    692708  2010-01-08 10:24   article.pdf
+}},
+Abstract = {The identifiability of three diffusion properties (diffusion coefficient D, partition coefficient K, and convective mass transfer coefficient hm) from desorption kinetics (or equivalently sorption kinetics) was investigated from a new approximated analytical solution of 1D diffusion coupled with a Robin boundary condition. A generalized least-squares criterion, which extends classical identification techniques, was proposed. The robustness of classical and modified criteria was compared on both experimental and simulated data including different sampling strategies and noise levels. Confidence intervals and bias were calculated for a large set of conditions: desorption levels ranged between 30{}\% and 100{}\% (equilibrium), dilution factors ranged between 10-3 and 10-1, mass Biot numbers ranged between 10-1 and 104, and K values ranged between 10-3 and 5.},
+Year = {2006} }
+
+@book{
+Crank80theMathematics,
+Author = {Crank, John},
+Title = {The Mathematics of Diffusion},
+Publisher = {Oxford University Press, USA },
+Notes = {{
+}n{(consultable a la biblio de l'ensia, 16.13 CRA, sur google, sur amazon. {}\%@ 0198534116)
+}l{unzip -l ~/livres/endnotegoujot.Data/PDF/Crank80theMathematics-2525730561/Crank80theMathematics.zip:      1      2537  2011-05-19 17:06   notes
+  inflating: notes                   
+Crank.
+Crank80theMathematics est aussi sur mol4 dans referex/chemistry. ce qui ressemble le plus � senscnonlin, p57, a �t� repris par vergnaud, a dire dans senscnonlin
+ne d�montre rien sauf sur R, cite juste les r�sultats obtenus par d'autres.
+p38 !!! la concentration entre deux milieux � D et K diff�rents ne d�pend pas dutemps.
+utile pour senscnonlin: aux petits temps, que si t est assez grand pour que la couche limite existe.
+p25, expression "heaviside generalized" pour le cas des racines multiples mais en nb fini.
+p9, solution plane d) � base de diracs.
+p19, dit que heaviside doit etre justifie.
+p23, the heaviside classique.
+p24, "it is plausible to assume that (2.59) (heaviside expansion theorem) still sholds with n=\infty only for EDP on finite region (dit que cauchy intergrals a �t� fait dans les cas de finite region, par d'autres).
+p11, "reflex at boundary" devrait �tre "fonction paire".
+p15, r�flexion de solution de green � une boundary peuvent se faire hors du point de sym�trie, arguments douteux, mais appliqu� dans un cas vrai.
+p162, lorsque D d�pend de c, alors on doit prendre u=\int_c D(c) dc comme nouvelle inconnue, et du coup \partial_x(D(c)*partial_x c)=\partial_x \partial_x u, et les conditions au bords s'adaptent. Mais la d�riv�e \partial_t c devient \partial_t u/D(u)...
+si u=u(c) qui est quelconque, on a (\partial_x u+\partial_x \partial_x u)/\partial_t u=\partial_x(u'*\partial_x c)/u'/\partial_t c=u''*(\partial_x c)^2/u'/\partial_t c+\partial_x\partial_x c/\partial_t c
+et \partial_x(D*\partial_x c)/\partial_t c=(D'(\partial_x c)^2+D*\partial_x\partial_x c)/\partial_t c.
+ces deux la sont proportionnels avec constante fixe si u''/u'*constante=D' et si constante=D :-( marche pas.
+et (\partial_x u+\partial_x \partial_x u)/\partial_t u=\partial_x(u+u'*\partial_x c)/u'/\partial_t c=u''*(\partial_x c)^2/u'/\partial_t c+u'+\partial_x\partial_x c/\partial_t c ne mene a rien non plus :-(
+si u=u(c), et v(u(c))=c, on a \partial_x(D\partial_x v(u(c)))=\partial_x(D*v'*u'*\partial_x)=(D'*v'*u'+D*u''*v'+D*u'*v'')(\partial_x u)^2+D*u'*\partial_x\partial_x u et \partial_t  ... sert a rien :-(
+p163 marche aussi pour les instationnaires (mais axisymetrique, spherique ou plat) ! �9.1.2
+p167, (9.40) indique une solution exacte pour un probleme non stationnaire.
+p169, diff�rents coefficients de diffusions.
+p40, third kind et erfc, solution temps court, d�montre rien, cite Carslaw59conduction dans la page suivante.
+p68, dit que crank et parker (TODO ?) a �tendu le 2D � certains cas non-lin�aires.
+p89, " On putting u = C r (Eq. 6.2), dC_dt=D*2/r*dC_dr+D*ddC_dr_dr becomes du_dt= -D*ddu_dr_dr (Eq. 6.3)" utilisable par exemple dans ~/K/RECHERCHE/matlab/senscrep/sensca_shorttime.m donc si dC_dr=0 en r=0 cela veut dire que lim_{r=0}(du_r/r-u/r^2)=o(1) ce qui veut dire lim_{r=0}(du/u-dr/r)=o(u dr/r), du/u= admet une derivee nulle en 0, qui ne s ecrit pas mieux que cela, mais Carslaw59conduction fait le raccourci en disant dirichlet au centre (�gal 0) ; pourquoi pas vu la r�gularit� obligatoire des solutions ... si dC_dr=kmat/D*(Ceq-C) alors du_r/r-u/r^2=
+p381 roots of beta_n*cot(beta_n) + L - 1 , table 6.2  ~/K/RECHERCHE/coopere2/20140307romdhana/diffudionInSphere.m , pour
+p96 pseries = @(beta,t)6*L*L*exp(-beta^2*D*t/R/R)/beta/beta/(beta*beta+L*(L-1));% (Eq. 6.43) ~/K/RECHERCHE/coopere2/20140307romdhana/diffudionInSphere.m
+}},
+Year = {1980} }
+
+@Article{
+Romdhana16JFoodEng,
+File = {~/livres/publis/Romdhana16JFoodEng.pdf},
+ Title = {Model reduction technique for faster simulation of drying of spherical solid foods}, 
+ Author = {Romdhana, H. and Lambert, C. and Goujot, D. and Courtois, F.},
+ Journal = {Journal of Food Engineering},
+ Year = {2016},
+ Pages = {125--135},
+ Volume = {170},
+ Doi = {10.1016/j.jfoodeng.2015.09.021},
+}
+
+
+@article{
+Romdhana19DryTech,
+Files = {~/livres/publis/Lambert16DryTechnol.pdf },
+author = {Romdhana, Hedi and Goujot, Daniel and Bernuau, Emmanuel and Courtois, Francis},
+title = {Toward a simple, generic, and rapid simulation of the drying of solid foods},
+journal = {Drying Technology},
+volume = {0},
+number = {0},
+pages = {0-0},
+year = {2019},
+doi = {10.1080/07373937.2018.1532438},
+abstract = { ABSTRACT In order to simulate the drying of foods, calculations based on finite differences, elements, or volumes are extremely time-consuming, particularly when embedded in an optimization procedure. Such models, involving coupled heat and mass transfers and nonlinear properties and boundaries, give rise to slow simulations. This paper proposes a new method concerning the slab, cylindrical, and spherical geometries. This method gives results equivalent to those of the finite volume method but is more rapid by an order of magnitude. The method is based on an optimized 3-compartment model whose parameters are linked to physically meaningful food properties }
+}
+

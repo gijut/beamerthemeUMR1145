@@ -25,15 +25,20 @@
         {\usebeamertemplate***{page number in head/foot}};
     \fi
     % Name, title, date
-    \node[left, text depth=0, text width=.75\paperwidth, inner sep=0]
-      at (.95\textwidth, 2mm)
+    \node[left, text depth=0, text width=1mm, inner sep=0]
+      at (.98\textwidth, 2mm)
       {
         \ifnum\thepage>1\relax%
-        {\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\scalebox{\ScaleAuthor}{\insertauthor}}%
-          {\usebeamercolor{date in head/foot}%
-          \usebeamerfont{date in head/foot}%
-          \hfill\insertdate}%
-          \fi%
+	\begin{picture}(0,0)(0,0)\put(0,0){\vbox to 0pt{\vss\hbox to 0pt{\hss%
+          \begin{minipage}[b]{.80\paperwidth}\raggedright
+	    {\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}
+              \PN@text\global\def\PN@text{} \insertauthor}%
+            {\usebeamercolor{date in head/foot}%
+              \usebeamerfont{date in head/foot}%
+              \hfill\insertdate}
+	  \end{minipage}%
+	  }}}\end{picture}%
+        \fi%
       };
   \end{tikzpicture}
 }
