@@ -11,59 +11,13 @@ style=nejm,
 sorting=ynt
 ]{biblatex}
 
+\usepackage{parnotes}% pour \parnote https://tex.stackexchange.com/questions/271809/footnotes-in-a-single-paragraph-in-beamer
+\input{beamerthemeUMR1145}
+
 \addbibresource{bibliography.bib}
- 
-\usetheme{LUH}
-
-
-
 \title{Some Presentation Title That's Long Enough To Need Two Lines}
 \date[\today]{Converence XYZ, \today}
 \author[Insert author]{Author DEF}
-
-\setbeamertemplate{logonortheastp1}{\begin{picture}(0,0)(0,0)
-\put(-0,-30){\llap{\includegraphics[width=.95\textwidth]{hautp1.png}}}\end{picture}}
-\setbeamertemplate{logonorthwestp1}{}
-\setbeamertemplate{logosoutheastp1}{\begin{picture}(0,0)(20,2)
-\put(0,20){\llap{
-\includegraphics[height=1cm]{logoAPT.png}%
-\includegraphics[height=1cm]{logoINRA.png}}}~
-\end{picture}
-}
-\setbeamertemplate{logosouthwestp1}{\begin{picture}(0,0)(-5,-1)
-\put(50,0){\llap{\includegraphics[height=19mm]{coinbasgauche.jpg}}}
-\put(12,53){\includegraphics[height=.93\textheight]{traitgauche.png}}
-\put(45,6){
-\includegraphics[width=.88\textwidth]{traitbas.png}}
-\put(20,32){\color{red}Ingénierie Procédés Aliments}
-\put(20,22){\color{red}\textit{(Food \& Process Engineering)}}
-\end{picture}
-}
-% \titleimage{\includegraphics[width=.7\paperwidth]{luh_title_image}}
-\setbeamertemplate{logonortheast}{\begin{picture}(0,0)(0,0)
-\put(0,-20){\llap{\includegraphics[width=.94\textwidth]{haut.png}}}
-\end{picture}}
-\setbeamertemplate{logosouthwest}{\begin{picture}(0,0)(-5,-1)
-\put(50,0){\llap{\includegraphics[height=19mm]{coinbasgauche.jpg}}}
-\put(45,6){
-\includegraphics[width=.88\textwidth]{traitbas.png}}
-\put(-5,53){\rotatebox{90}{\rlap{
-\includegraphics[height=5mm]{logoAPT.png}%
-\includegraphics[height=5mm]{logoINRA.png}}}}
-\put(12,53){\includegraphics[height=.93\textheight]{traitgauche.png}}
-\end{picture}
-}
-% \setbeamertemplate{logosoutheast}{\includegraphics[height=\LUHLogoHeight]{traitbas.png}}
-
-\AtBeginSection[]% merci http://jeromyanglim.tumblr.com/post/33559584570/how-to-show-active-section-in-table-of-contents-in
-{
-   \begin{frame}
-       \tableofcontents[currentsection]
-   \end{frame}
-}
-
-% \usepackage[para]{footepackage{parnotes}% marche pas dans beamer.
-\usepackage{parnotes}% pour \parnote https://tex.stackexchange.com/questions/271809/footnotes-in-a-single-paragraph-in-beamer
 
 \DeclareSourcemap{
     \maps[datatype=bibtex,overwrite=true]{
@@ -110,16 +64,6 @@ sorting=ynt
         }                                     
     }
 }
-\global\def\bibliofinale{}
-% \renewcommand{\parnoteintercmd}{\penalty-1000\hskip 1em plus 10em minus 0.2em}
-\makeatletter
-\newcommand{\parcite}[2][]{\parnote{#1\fullcite{#2}}
-    \unless\ifx\bibliofinale\@empty\g@addto@macro\bibliofinale{\parnoteintercmd}\fi
-    % Redefine \@currentlabel to the parnote label, so \label works
-    \g@addto@macro\bibliofinale{\phantomsection\def\@currentlabel{#1}}%
-    \g@addto@macro\bibliofinale{\cite{#2}}%
-}
-\makeatother
 
 \begin{document}
 
@@ -256,7 +200,6 @@ And even more content.
 \end{refsection}
 
 \begin{frame}
-\setbox0=\hbox{\bibliofinale}
-\printbibliography
+\bibliographie
 \end{frame}
 \end{document}
